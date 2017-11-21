@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 
 class SearchNav extends Component{
     constructor(props){
@@ -21,9 +20,7 @@ class SearchNav extends Component{
 
     onFormSubmit(event){
         event.preventDefault();
-
-        // Fetch API Results
-        console.log(this.state.term);
+        this.props.onSearchSubmit(this.state.term);
     }
 
     render(){
