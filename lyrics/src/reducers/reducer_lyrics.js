@@ -1,4 +1,4 @@
-import FETCH_VIDEOS from '../actions';
+import {FETCH_VIDEOS} from '../actions/types';
 
 export default function(state = {}, action){
   switch (action.type) {
