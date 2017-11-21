@@ -8,6 +8,22 @@ class SearchNav extends Component{
         this.state = {
             term: ''
         };
+
+        this.onInputChange = this.onInputChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
+    }
+
+    onInputChange(event){
+        this.setState({
+            term: event.target.value
+        })
+    }
+
+    onFormSubmit(event){
+        event.preventDefault();
+
+        // Fetch API Results
+        console.log(this.state.term);
     }
 
     render(){
@@ -19,8 +35,8 @@ class SearchNav extends Component{
                 </button>
     
                 <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <form className="form-inline justify-content-end">
-                        <input className="form-control mr-sm-2" type="text" placeholder="Search Songs"/>
+                    <form className="form-inline justify-content-end" onSubmit={this.onFormSubmit}>
+                        <input className="form-control mr-sm-2" type="text" placeholder="Search Songs" value={this.state.term} onChange={this.onInputChange}/>
                         <button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
