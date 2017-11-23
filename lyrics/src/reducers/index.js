@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import LyricsReducer from './reducer_lyrics';
 
 const rootReducer = combineReducers({
-    videos: LyricsReducer
+    fetch: LyricsReducer
 });
 
 export default rootReducer;
