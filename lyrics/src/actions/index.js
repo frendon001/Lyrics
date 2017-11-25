@@ -15,7 +15,7 @@ export function fetchVideos(term){
 export function fetchTracks(term){
   const url = `http://api.musixmatch.com/ws/1.1/track.search?apikey=${KEYS.musixmatch}&`;
   const request = axios.get(`${url}q_track_artist=${term}&page_size=10&page=1&s_track_rating=desc`);
-
+  
   return{
     type: FETCH_TRACKS,
     payload: request

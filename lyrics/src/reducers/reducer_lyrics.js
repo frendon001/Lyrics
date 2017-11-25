@@ -5,7 +5,8 @@ export default function(state = {}, action){
     case FETCH_VIDEOS:
       return {...state, videos: action.payload};
     case FETCH_TRACKS:
-      console.log(action.payload);
+      let track_list = action.payload.data.message.body.track_list;
+      console.log(track_list);
       return {...state, tracks: action.payload};
     default:
       return state;
