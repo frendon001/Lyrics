@@ -4,3 +4,10 @@ body {
   font-family: sans-serif;
   background-color: #eceeef;
 }
+
+.track-result-box{
+  background: white;
+  padding: 20px;
+  width: 50%;
+  margin: 5% 25%;
+}
