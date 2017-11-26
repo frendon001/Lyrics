@@ -7,7 +7,7 @@ export default function(state = {}, action){
     case FETCH_TRACKS:
       let track_list = action.payload.data.message.body.track_list;
       console.log(track_list);
-      return {...state, tracks: action.payload};
+      return {...state, tracks: track_list};
     default:
       return state;
   }

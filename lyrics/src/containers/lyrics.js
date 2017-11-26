@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 import SearchNav from './search_nav';
+import Welcome from '../components/welcome';
+import { connect } from 'react-redux';
 
 class Lyric extends Component {
 
   render(){
+    let display = !this.props.tracks ? <Welcome /> : <div>Something Should display Here</div>
     return(
-      <SearchNav />
+      <div>
+        <SearchNav />
+        {display}
+      </div>
     );
   }
 }
 
-export default Lyric;
+function mapStateToProps(state){
+  return{
+    tracks: state.fetch.tracks
+  }
+}
+
+export default connect(mapStateToProps)(Lyric);
