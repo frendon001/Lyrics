@@ -5,9 +5,13 @@ body {
   background-color: #eceeef;
 }
 
+/* TODO: Add CSS that will fade the boxes and fade them in on cursor hover */
 .track-result-box{
   background: white;
   padding: 20px;
-  width: 50%;
-  margin: 5% 25%;
+  width: 70%;
+  margin: 5% 15%;
+  text-align: center;
 }
+
+/* TODO: Add CSS that will allow the Navbar to scroll down with the user */
