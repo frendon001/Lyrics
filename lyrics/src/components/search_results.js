@@ -5,8 +5,9 @@ function getTrack(trackParent){
   return(
     <div className="track-result-box" key={track.track_id}>
       <p><strong>{track.track_name}</strong> BY <strong>{track.artist_name}</strong> FROM <strong>{track.album_name}</strong></p>
-      <p>Type of music: {getGenres(track.primary_genres.music_genre_list)}</p>
+      <p>Track Genre: {getGenres(track.primary_genres.music_genre_list)}</p>
       <p>The lyrics to this song from Musixmatch can be found <a href={track.track_share_url}>here</a></p>
+      <div><button type="button" class="btn btn-success">{track.track_name}</button></div>
     </div>
   );
 }
