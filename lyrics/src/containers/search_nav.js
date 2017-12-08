@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { fetchTracks } from '../actions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class SearchNav extends Component{
     constructor(props){
@@ -21,9 +23,10 @@ class SearchNav extends Component{
 
     onFormSubmit(event){
         event.preventDefault();
-
-        // Fetch API Results
-        console.log(this.state.term);
+        // Fetch API using the entered term
+        console.log('Search Term: ', this.state.term);
+        this.props.fetchTracks(this.state.term);
+        this.setState({term: ''});
     }
 
     render(){
@@ -45,4 +48,10 @@ class SearchNav extends Component{
     }
 }
 
-export default SearchNav;
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+      fetchTracks
+    }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(SearchNav);
