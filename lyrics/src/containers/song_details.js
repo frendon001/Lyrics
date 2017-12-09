@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SearchNav from './search_nav';
 
 class SongDetails extends Component {
   componentDidMount(){
@@ -9,6 +10,7 @@ class SongDetails extends Component {
   render(){
     return(
       <div>
+        <SearchNav history={this.props.history} />
         Song details for song clicked on.
       </div>
     )

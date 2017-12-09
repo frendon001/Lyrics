@@ -24,7 +24,7 @@ class SearchNav extends Component{
     onFormSubmit(event){
         event.preventDefault();
         // Fetch API using the entered term
-        this.props.fetchTracks(this.state.term);
+        this.props.fetchTracks(this.state.term, this.props.history);
         this.setState({term: ''});
     }
 
