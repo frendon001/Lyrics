@@ -3,6 +3,8 @@ import Welcome from '../components/welcome';
 import SearchResults from '../components/search_results';
 import { connect } from 'react-redux';
 
+// TODO: Handle use-case where no results are returned
+
 class Lyric extends Component {
 
   render(){
