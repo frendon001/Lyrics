@@ -9,6 +9,7 @@ import promise from 'redux-promise';
 import reducers from './reducers';
 import SearchNav from './containers/search_nav';
 import Lyrics from './containers/lyrics';
+import SongDetails from './containers/song_details';
 import registerServiceWorker from './registerServiceWorker';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -19,6 +20,7 @@ ReactDOM.render(
             <div>
                 <SearchNav />
                 <Switch>
+                    <Route path="/song/:id" component={SongDetails} />
                     <Route exact path="/" component={Lyrics} />
                 </Switch>
             </div>
