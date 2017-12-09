@@ -25,3 +25,11 @@ export function fetchTracks(term, history){
     payload: request
   }
 }
+
+export function fetchTrack(id){
+
+}
+
+export function fetchLyrics(id){
+  
+}

@@ -4,7 +4,7 @@ import SearchNav from './search_nav';
 class SongDetails extends Component {
   componentDidMount(){
     const {id} = this.props.match.params;
-    console.log("Track ID: ", id)
+    const {lid} = this.props.match.params;
   }
 
   render(){
