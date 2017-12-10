@@ -8,7 +8,7 @@ function getTrack(trackParent){
       <p><strong>{track.track_name}</strong> BY <strong>{track.artist_name}</strong> FROM <strong>{track.album_name}</strong></p>
       <p>Track Genre: {getGenres(track.primary_genres.music_genre_list)}</p>
       <p>The lyrics to this song from Musixmatch can be found <a href={track.track_share_url} target="_blank">here</a></p>
-      <div><Link className="btn btn-success" to={`/song/${track.track_id}/${track.lyrics_id}`}>{track.track_name}</Link></div>
+      <div><Link className="btn btn-success" to={`/song/${track.track_id}`}>{track.track_name}</Link></div>
     </div>
   );
 }

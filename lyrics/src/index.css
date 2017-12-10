@@ -14,4 +14,8 @@ body {
   text-align: center;
 }
 
+.lyrics-display{
+  white-space: pre-wrap;
+}
+
 /* TODO: Add CSS that will allow the Navbar to scroll down with the user */
