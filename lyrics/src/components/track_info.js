@@ -4,9 +4,10 @@ const renderInfo = ({ lyrics, track }) => {
   return(
     <div className="track-display">
       <h2><em>{track.track_name}</em> by <em>{track.artist_name}</em></h2>
-      <div>Album: {track.album_name}</div>
+      <h5><em>{track.album_name}</em></h5>
       <hr />
       <p>{displayLyrics(lyrics)}</p>
+      <div>You can find the full lyrics from Musixmatch <a href={track.track_share_url} target="_blank">here</a>.</div>
     </div>
   );
 }

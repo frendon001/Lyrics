@@ -19,6 +19,7 @@ body {
   padding: 2%;
   margin-left: 5%;
   margin-right: 5%;
+  text-align: center;
 }
 
 /* TODO: Add CSS that will allow the Navbar to scroll down with the user */
