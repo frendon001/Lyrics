@@ -18,7 +18,7 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         <BrowserRouter>
             <Switch>
-                <Route path="/song/:id" component={SongDetails} />
+                <Route path="/song/:track&:artist&:id" component={SongDetails} />
                 <Route exact path="/" component={Lyrics} />
             </Switch>
         </BrowserRouter>

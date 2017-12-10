@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
 import SearchNav from './search_nav';
 import TrackInfo from '../components/track_info';
+import YTSearch from 'youtube-api-search';
+import { KEYS } from '../config';
 import { fetchTrack, fetchLyrics } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 class SongDetails extends Component {
+  constructor(props){
+    super()
+
+    this.state = {
+      videos: [],
+      selectedVideo: null
+    }
+  }
+
   componentDidMount(){
-    const {id} = this.props.match.params;
+    const {id, track, artist} = this.props.match.params;
+    const videoTerm = artist + " " + track;
     this.props.fetchTrack(id);
     this.props.fetchLyrics(id);
+    YTSearch({key: KEYS.google, term: videoTerm}, (videos) => {
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
+    });
   }
 
   render(){

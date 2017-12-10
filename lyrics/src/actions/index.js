@@ -1,17 +1,7 @@
 import axios from 'axios';
-import { FETCH_VIDEOS, FETCH_TRACKS, FETCH_TRACK, FETCH_LYRICS } from './types';
-import YTSearch from 'youtube-api-search';
+import { FETCH_TRACKS, FETCH_TRACK, FETCH_LYRICS } from './types';
 import { KEYS } from '../config';
 const ROOT_URL = 'http://api.musixmatch.com/ws/1.1/';
-
-export function fetchVideos(term){
-  YTSearch({key: KEYS.google, term}, (videos) => {
-    return{
-      type: FETCH_VIDEOS,
-      payload: videos
-    }
-  });
-}
 
 export function fetchTracks(term, history){
   const url = `${ROOT_URL}track.search?apikey=${KEYS.musixmatch}&`;
