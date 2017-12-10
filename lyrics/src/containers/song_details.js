@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchNav from './search_nav';
+import TrackInfo from '../components/track_info';
 import { fetchTrack, fetchLyrics } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -16,12 +17,10 @@ class SongDetails extends Component {
       return <div>Loading...</div>
     }
     let songLyrics = getLyrics(this.props.lyrics.lyrics_body);
-    console.log(songLyrics[22])
     return(
       <div>
         <SearchNav history={this.props.history} />
-        <p>{this.props.track.track_name} by {this.props.track.artist_name}</p>
-        <pre >{this.props.lyrics.lyrics_body}</pre>
+        <TrackInfo lyrics={songLyrics} track={this.props.track} />
       </div>
     )
   }

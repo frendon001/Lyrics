@@ -14,8 +14,11 @@ body {
   text-align: center;
 }
 
-.lyrics-display{
-  white-space: pre-wrap;
+.track-display{
+  width: 40%;
+  padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* TODO: Add CSS that will allow the Navbar to scroll down with the user */
