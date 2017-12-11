@@ -7,7 +7,7 @@ const renderMessage = () => {
         <h1 className="display-3">Welcome to the Lyrics App!</h1>
         <p className="lead">
           This is an application that will allow you to search for any song. Upon search, select your song 
-          of choice in order to view simple song information, lyrics samples (from Musixmatch API), and related 
+          of choice in order to view simple song information, lyrics samples (from Genius API), and related 
           YouTube Videos!
         </p>
         <hr className="my-4"/>

@@ -1,24 +1,15 @@
 import React from 'react';
 
-const renderInfo = ({ lyrics, track }) => {
+const renderInfo = ({ track }) => {
   return(
     <div className="track-display">
-      <h2><em>{track.track_name}</em> by <em>{track.artist_name}</em></h2>
-      <h5><em>{track.album_name}</em></h5>
+      <h2><em>{track.title}</em> by <em>{track.primary_artist.name}</em></h2>
+      <img src={track.album.cover_art_url} alt="Album Cover" width="70%" />
+      <h5><em>{track.album.name}</em></h5>
       <hr />
-      <p>{displayLyrics(lyrics)}</p>
-      <div>You can find the full lyrics from Musixmatch <a href={track.track_share_url} target="_blank">here</a>.</div>
+      <div>You can find the full lyrics from Genius <a href={track.url} target="_blank">here</a>.</div>
     </div>
   );
-}
-
-function displayLyrics(lyrics){
-  return lyrics.map((line, index) => {
-    if(index > lyrics.length - 3){
-      return '';
-    }
-    return <span key={index}>{line}<br/></span>
-  });
 }
 
 export default renderInfo;

@@ -12,7 +12,7 @@ class Lyric extends Component {
     let display = !this.props.tracks ? <Welcome /> : <SearchResults tracks={this.props.tracks} />
     return(
       <div>
-        <SearchNav />
+        <SearchNav history={this.props.history} />
         {display}
       </div>
     );

@@ -1,16 +1,16 @@
 import axios from 'axios';
-import { FETCH_TRACKS, FETCH_TRACK, FETCH_LYRICS } from './types';
-import { KEYS } from '../config';
-const ROOT_URL = 'http://api.musixmatch.com/ws/1.1/';
+import { FETCH_TRACKS, FETCH_TRACK } from './types';
+const ROOT_URL = 'http://localhost:3030'
 
 export function fetchTracks(term, history){
-  const url = `${ROOT_URL}track.search?apikey=${KEYS.musixmatch}&`;
-  const request = axios.get(`${url}q_track_artist=${term}&page_size=10&page=1&s_track_rating=desc`);
+  const request = axios.get(`${ROOT_URL}/search`, {
+    headers: { term: term }
+  });
 
   if(history){
     history.push('/')
   }
-  
+
   return{
     type: FETCH_TRACKS,
     payload: request
@@ -18,21 +18,12 @@ export function fetchTracks(term, history){
 }
 
 export function fetchTrack(id){
-  const url = `${ROOT_URL}track.get?apikey=${KEYS.musixmatch}&track_id=${id}`;
-  const request = axios.get(url)
+  const request = axios.get(`${ROOT_URL}/song`, {
+    headers: { songid: id }
+  });
 
   return{
     type: FETCH_TRACK,
-    payload: request
-  }
-}
-
-export function fetchLyrics(id){
-  const url = `${ROOT_URL}track.lyrics.get?apikey=${KEYS.musixmatch}&track_id=${id}`;
-  const request = axios.get(url)
-
-  return{
-    type: FETCH_LYRICS,
     payload: request
   }
 }
