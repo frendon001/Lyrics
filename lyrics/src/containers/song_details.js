@@ -3,6 +3,7 @@ import SearchNav from './search_nav';
 import TrackInfo from '../components/track_info';
 import YTSearch from 'youtube-api-search';
 import VideoDisplay from '../components/video_display';
+import VideoList from '../components/video_list';
 import { KEYS } from '../config';
 import { fetchTrack } from '../actions';
 import { connect } from 'react-redux';
@@ -39,7 +40,12 @@ class SongDetails extends Component {
       <div>
         <SearchNav history={this.props.history} />
         <TrackInfo track={this.props.track} />
-        <VideoDisplay video={this.state.selectedVideo} />
+        <div className="video-detail">
+          <VideoDisplay video={this.state.selectedVideo} />
+          <VideoList
+            onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+            videos={this.state.videos} />
+        </div>
       </div>
     )
   }

@@ -31,4 +31,13 @@ body {
   margin-right: 2%;
 }
 
+.video-list-item{
+  padding: 4%;
+  text-align: center;
+}
+
+.list-group-item{
+  cursor: pointer;
+}
+
 /* TODO: Add CSS that will allow the Navbar to scroll down with the user */
