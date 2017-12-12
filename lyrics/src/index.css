@@ -25,10 +25,10 @@ body {
 
 .video-detail{
   float: right;
-  width: 40%;
+  width: 46%;
   padding: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 /* TODO: Add CSS that will allow the Navbar to scroll down with the user */
