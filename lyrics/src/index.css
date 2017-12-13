@@ -14,4 +14,30 @@ body {
   text-align: center;
 }
 
+.track-display{
+  float: left;
+  width: 40%;
+  padding: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.video-detail{
+  float: right;
+  width: 46%;
+  padding: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.video-list-item{
+  padding: 4%;
+  text-align: center;
+}
+
+.list-group-item{
+  cursor: pointer;
+}
+
 /* TODO: Add CSS that will allow the Navbar to scroll down with the user */

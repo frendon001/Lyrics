@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import SearchNav from './search_nav';
 import Welcome from '../components/welcome';
 import SearchResults from '../components/search_results';
+import SearchNav from './search_nav';
 import { connect } from 'react-redux';
+
+// TODO: Handle use-case where no results are returned
 
 class Lyric extends Component {
 
@@ -10,7 +12,7 @@ class Lyric extends Component {
     let display = !this.props.tracks ? <Welcome /> : <SearchResults tracks={this.props.tracks} />
     return(
       <div>
-        <SearchNav />
+        <SearchNav history={this.props.history} />
         {display}
       </div>
     );

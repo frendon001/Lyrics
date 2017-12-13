@@ -1,36 +1,19 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-function getTrack(trackParent){
-  let track = trackParent.track;
+function getTrack(track){
   return(
-    <div className="track-result-box" key={track.track_id}>
-      <p><strong>{track.track_name}</strong> BY <strong>{track.artist_name}</strong> FROM <strong>{track.album_name}</strong></p>
-      <p>Track Genre: {getGenres(track.primary_genres.music_genre_list)}</p>
-      <p>The lyrics to this song from Musixmatch can be found <a href={track.track_share_url} target="_blank">here</a></p>
-      <div><button type="button" class="btn btn-success">{track.track_name}</button></div>
+    <div className="track-result-box" key={track.id}>
+      <p><strong>{track.title}</strong> BY <strong>{track.primary_artist.name}</strong></p>
+      <p>The lyrics to this song from Genius can be found <a href={track.url} target="_blank">here</a></p>
+      <div><Link className="btn btn-success" to={`/song/${track.title}&${track.primary_artist.name}&${track.id}`}>{track.title}</Link></div>
     </div>
   );
 }
 
-function getGenres(genres){
-  return genres.map((genre, index) => {
-    let g = genre.music_genre;
-    if(index === 0){
-      return(
-        <em key={g.music_genre_id}>{g.music_genre_name}</em>
-      );
-    }
-    else{
-      return(
-        <em key={g.music_genre_id}> | {g.music_genre_name}</em>
-      );
-    }
-    
-  });
-}
-
-function renderTracks(tracks){
-  return tracks.map(track => {
+function renderTracks(hits){
+  return hits.map(hit => {
+    let track = hit.result;
     return getTrack(track);
   });
 }
