@@ -27,3 +27,14 @@ export function fetchTrack(id){
     payload: request
   }
 }
+
+export function fetchLyrics(url){
+  const request = axios.get(`${ROOT_URL}/lyrics`, {
+    headers: { songurl: url }
+  });
+
+  return{
+    type: 'fetch_lyrics',
+    payload: request
+  }
+}

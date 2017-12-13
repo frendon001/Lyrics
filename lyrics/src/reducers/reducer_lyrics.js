@@ -9,6 +9,9 @@ export default function(state = {}, action){
       let {song} = action.payload.data.response;
       console.log('Fetch Track: ', song);
       return {...state, track: song}
+    case 'fetch_lyrics':
+      let lyrics = action.payload.data;
+      return {...state, lyrics: lyrics[0]}
     default:
       return state;
   }

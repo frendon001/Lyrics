@@ -5,7 +5,7 @@ import YTSearch from 'youtube-api-search';
 import VideoDisplay from '../components/video_display';
 import VideoList from '../components/video_list';
 import { KEYS } from '../config';
-import { fetchTrack } from '../actions';
+import { fetchTrack, fetchLyrics } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -15,8 +15,11 @@ class SongDetails extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      toggleLyrics: false
     }
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
@@ -31,15 +34,39 @@ class SongDetails extends Component {
     });
   }
 
+  handleClick(){
+    if (!this.state.toggleLyrics && !this.props.lyrics){
+      this.setState({
+        toggleLyrics: true
+      })
+      this.props.fetchLyrics(this.props.track.url)
+    }
+    else if(!this.state.toggleLyrics){
+      this.setState({
+        toggleLyrics: true
+      })
+    } else {
+      this.setState({
+        toggleLyrics: false
+      })
+    }
+  }
+
   render(){
     if (!this.props.track) {
       return <div>Loading...</div>
+    }
+    if(this.state.toggleLyrics){
+      console.log(this.props.lyrics)
+    } else{
+      console.log("Lyrics are hidden!")
     }
 
     return(
       <div>
         <SearchNav history={this.props.history} />
         <TrackInfo track={this.props.track} />
+        <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.handleClick}>Lyrics</button> 
         <div className="video-detail">
           <VideoDisplay video={this.state.selectedVideo} />
           <VideoList
@@ -53,13 +80,15 @@ class SongDetails extends Component {
 
 function mapStateToProps(state){
   return{
-    track: state.fetch.track
+    track: state.fetch.track,
+    lyrics: state.fetch.lyrics
   }
 }
 
 function mapDispatchToProps(dispatch){
   return bindActionCreators({
-    fetchTrack
+    fetchTrack,
+    fetchLyrics
   }, dispatch);
 }
 
