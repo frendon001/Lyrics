@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_TRACKS, FETCH_TRACK } from './types';
+import { FETCH_TRACKS, FETCH_TRACK, FETCH_LYRICS } from './types';
 const ROOT_URL = 'http://localhost:3030'
 
 export function fetchTracks(term, history){
@@ -34,7 +34,7 @@ export function fetchLyrics(url){
   });
 
   return{
-    type: 'fetch_lyrics',
+    type: FETCH_LYRICS,
     payload: request
   }
 }
