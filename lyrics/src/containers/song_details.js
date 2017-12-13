@@ -4,6 +4,7 @@ import TrackInfo from '../components/track_info';
 import YTSearch from 'youtube-api-search';
 import VideoDisplay from '../components/video_display';
 import VideoList from '../components/video_list';
+import TrackLyrics from '../components/track_lyrics';
 import { KEYS } from '../config';
 import { fetchTrack, fetchLyrics } from '../actions';
 import { connect } from 'react-redux';
@@ -56,17 +57,18 @@ class SongDetails extends Component {
     if (!this.props.track) {
       return <div>Loading...</div>
     }
-    if(this.state.toggleLyrics){
-      console.log(this.props.lyrics)
-    } else{
-      console.log("Lyrics are hidden!")
-    }
+
+    let displayLyrics = this.state.toggleLyrics ? <TrackLyrics lyrics={this.props.lyrics} /> : <div></div>
 
     return(
       <div>
         <SearchNav history={this.props.history} />
-        <TrackInfo track={this.props.track} />
-        <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.handleClick}>Lyrics</button> 
+        <div className="track-display">
+          <TrackInfo track={this.props.track} />
+          <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.handleClick}>Lyrics</button> 
+          {displayLyrics}
+          <div className="track-lyrics">You can find the full lyrics from Genius <a href={this.props.track.url} target="_blank">here</a>.</div>
+        </div>
         <div className="video-detail">
           <VideoDisplay video={this.state.selectedVideo} />
           <VideoList
