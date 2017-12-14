@@ -1,6 +1,7 @@
 const config = require('../config');
 var Genius = require("node-genius");
 var geniusClient = new Genius(config.config.access_token);
+var scraperjs = require('scraperjs');
 
 exports.song = function(req, res, next){
   var songid = req.headers.songid;
@@ -24,5 +25,20 @@ exports.search = function(req, res, next){
       console.log("Hoorah. Here is the song: ", results);
       res.send(results);
   });
+}
+
+exports.lyrics = function(req, res, next){
+  var songurl = req.headers.songurl;
+
+  scraperjs.StaticScraper.create(songurl)
+    .scrape(function($) {
+        return $("p").map(function() {
+            return $(this).text();
+        }).get();
+    })
+    .then(function(news) {
+        // console.log(news);
+        res.send(news);
+    })
 }
 
