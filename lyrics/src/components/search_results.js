@@ -12,7 +12,7 @@ function getTrack(track){
 }
 
 function getURLSafeString(unsafeString){
-  let safeString = unsafeString.replace(/[^a-zA-Z ]/g, "");
+  let safeString = unsafeString.replace(/[^a-zA-Z0-9: ]/g, "");
   return safeString;
 }
 
