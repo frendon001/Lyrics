@@ -4,7 +4,7 @@ const renderMessage = () => {
   return(
     <div className="jumbotron jumbotron-fluid">
       <div className="container">
-        <h1 className="display-3">Welcome to the Lyrics App!</h1>
+        <h1 className="display-3">Welcome!</h1>
         <p className="lead">
           This is an application that will allow you to search for any song. Upon search, select your song 
           of choice in order to view simple song information, lyrics samples (from Genius API), and related 

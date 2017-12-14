@@ -67,7 +67,7 @@ class SongDetails extends Component {
           <TrackInfo track={this.props.track} />
           <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.handleClick}>Lyrics</button> 
           {displayLyrics}
-          <div className="track-lyrics">You can find the full lyrics from Genius <a href={this.props.track.url} target="_blank">here</a>.</div>
+          <div className="track-lyrics">You can also find the full lyrics from <a href={this.props.track.url} target="_blank">Genius</a>.</div>
         </div>
         <div className="video-detail">
           <VideoDisplay video={this.state.selectedVideo} />
