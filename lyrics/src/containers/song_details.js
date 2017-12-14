@@ -36,16 +36,20 @@ class SongDetails extends Component {
   }
 
   handleClick(){
-    if (!this.state.toggleLyrics && !this.props.lyrics || !this.state.toggleLyrics){
+    if (!this.state.toggleLyrics && !this.props.lyrics){
       this.setState({
         toggleLyrics: true
-      })
+      });
       this.props.fetchLyrics(this.props.track.url)
     }
-    else {
+    else if (!this.state.toggleLyrics){
+      this.setState({
+        toggleLyrics: true
+      });
+    } else {
       this.setState({
         toggleLyrics: false
-      })
+      });
     }
   }
 
