@@ -27,6 +27,10 @@ body {
   margin-top: 5%;
 }
 
+.track-album {
+  margin-top: 3%;
+}
+
 .video-detail{
   float: right;
   width: 46%;
