@@ -17,10 +17,14 @@ function getURLSafeString(unsafeString){
 }
 
 function renderTracks(hits){
-  return hits.map(hit => {
-    let track = hit.result;
-    return getTrack(track);
-  });
+  if(hits.length === 0){
+    return <h1 className="no-results">No search results were found :(</h1>
+  } else{
+    return hits.map(hit => {
+      let track = hit.result;
+      return getTrack(track);
+    });
+  }
 }
 
 const renderResults = ({tracks}) => {
