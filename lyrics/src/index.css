@@ -5,13 +5,18 @@ body {
   background-color: #eceeef;
 }
 
-/* TODO: Add CSS that will fade the boxes and fade them in on cursor hover */
 .track-result-box{
   background: white;
   padding: 20px;
   width: 70%;
   margin: 5% 15%;
   text-align: center;
+}
+
+.no-results{
+  text-align: center;
+  margin: 5%;
+  padding: 10%;
 }
 
 .track-display{
@@ -21,10 +26,16 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   text-align: center;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .track-lyrics {
   margin-top: 5%;
+}
+
+.track-album {
+  margin-top: 3%;
 }
 
 .video-detail{
@@ -33,6 +44,9 @@ body {
   padding: 2%;
   margin-left: 2%;
   margin-right: 2%;
+  /* margin-top: 5%; */
+  height: 100vh;
+  overflow: scroll;
 }
 
 .video-list-item{
@@ -43,5 +57,3 @@ body {
 .list-group-item{
   cursor: pointer;
 }
-
-/* TODO: Add CSS that will allow the Navbar to scroll down with the user */
