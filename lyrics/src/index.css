@@ -5,6 +5,11 @@ body {
   background-color: #eceeef;
 }
 
+/* .search-nav{
+  position: fixed;
+  width: 100%;
+} */
+
 /* TODO: Add CSS that will fade the boxes and fade them in on cursor hover */
 .track-result-box{
   background: white;
@@ -21,6 +26,8 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   text-align: center;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .track-lyrics {
@@ -37,6 +44,8 @@ body {
   padding: 2%;
   margin-left: 2%;
   margin-right: 2%;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .video-list-item{
