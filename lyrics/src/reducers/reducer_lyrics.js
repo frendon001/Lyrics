@@ -10,8 +10,24 @@ export default function(state = {}, action){
       return {...state, track: song}
     case FETCH_LYRICS:
       let lyrics = action.payload.data;
-      return {...state, lyrics: lyrics[0]}
+      let index = getLyricsIndex(lyrics);
+      return {...state, lyrics: lyrics[index]}
     default:
       return state;
   }
+}
+
+function getLyricsIndex(lyrics){
+  let correctLyrics = {
+    size: 0,
+    index: 0
+  };
+  for(let i = 0; i < lyrics.length; i++){
+    if(lyrics[i].length > correctLyrics.size){
+      correctLyrics.size = lyrics[i].length;
+      correctLyrics.index = i;
+    } 
+  }
+
+  return correctLyrics.index;
 }
