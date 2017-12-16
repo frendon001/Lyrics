@@ -11,7 +11,7 @@ class Lyric extends Component {
   render(){
     let display = !this.props.tracks ? <Welcome /> : <SearchResults tracks={this.props.tracks} />
     return(
-      <div>
+      <div className="lyrics">
         <SearchNav history={this.props.history} />
         {display}
       </div>

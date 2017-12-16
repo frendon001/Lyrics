@@ -2,7 +2,7 @@ import React from 'react';
 
 const renderMessage = () => {
   return(
-    <div className="jumbotron jumbotron-fluid">
+    <div className="jumbotron jumbotron-fluid welcome">
       <div className="container">
         <h1 className="display-3">Welcome!</h1>
         <p className="lead">
