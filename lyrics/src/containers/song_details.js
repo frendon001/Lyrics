@@ -61,7 +61,7 @@ class SongDetails extends Component {
     let displayLyrics = this.state.toggleLyrics ? <TrackLyrics lyrics={this.props.lyrics} /> : <div></div>
 
     return(
-      <div>
+      <div className="song-details">
         <SearchNav history={this.props.history} />
         <div className="track-display">
           <TrackInfo track={this.props.track} />
