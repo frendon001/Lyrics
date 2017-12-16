@@ -9,7 +9,7 @@ This project was created with the initial purpose of being able to easily get th
 
 ![TrackSearch](./images/search.png)
 
-![Track](./images/track.png)
+![TrackView](./images/trackview.png)
 
 ![TrackLyrics](./images/tracklyrics.png)
 
