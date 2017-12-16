@@ -2,16 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  /* background-color: #eceeef; */
-  /* background-image: url("https://images2.alphacoders.com/701/thumb-1920-70172.jpg");
-  background-size:  cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; */
-  /* opacity: 0.5; */
-  /* background: transparent; */
-  /* background-repeat:  no-repeat; */
-  /* background-position:  center center; */
 }
 
 .welcome{
@@ -44,7 +34,6 @@ body {
 }
 
 .song-details{
-  /* height: 100vh; */
   background-image: url("./images/spiration_dark.png");
   background-repeat: repeat;
   background-size:  cover;
@@ -80,10 +69,8 @@ body {
   padding: 2%;
   margin-left: 2%;
   margin-right: 2%;
-  /* margin-top: 5%; */
   height: 100vh;
   overflow: scroll;
-  /* background-color: rgba(236, 238, 239, .85); */
 }
 
 .video-list-item{
