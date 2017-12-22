@@ -59,13 +59,15 @@ class SongDetails extends Component {
     }
 
     let displayLyrics = this.state.toggleLyrics ? <TrackLyrics lyrics={this.props.lyrics} /> : <div></div>
+    let buttonPrim = "btn btn-outline-primary my-2 my-sm-0";
+    let buttonDang = "btn btn-outline-danger my-2 my-sm-0";
 
     return(
       <div className="song-details">
         <SearchNav history={this.props.history} />
         <div className="track-display">
           <TrackInfo track={this.props.track} />
-          <button className="btn btn-outline-primary my-2 my-sm-0" onClick={this.handleClick}>Lyrics</button> 
+          <button className={this.state.toggleLyrics ? buttonDang : buttonPrim} onClick={this.handleClick}>Lyrics</button> 
           {displayLyrics}
           <div className="track-lyrics">You can also find the full lyrics from <a href={this.props.track.url} target="_blank">Genius</a>.</div>
         </div>
