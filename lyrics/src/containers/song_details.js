@@ -53,21 +53,37 @@ class SongDetails extends Component {
     }
   }
 
+  getBtn(){
+    let buttonPrim = "btn btn-outline-primary my-2 my-sm-0";
+    let buttonDang = "btn btn-outline-danger my-2 my-sm-0";
+    let arrowPrim = "right-arrow";
+    let arrowDang = "down-arrow";
+  
+    return(
+      <div>
+        <button 
+          className={this.state.toggleLyrics ? buttonDang : buttonPrim} 
+          onClick={this.handleClick}>
+          Lyrics
+        </button>
+        <span className={this.state.toggleLyrics ? arrowDang : arrowPrim}></span>
+      </div>
+    );
+  }
+
   render(){
     if (!this.props.track) {
       return <div>Loading...</div>
     }
 
     let displayLyrics = this.state.toggleLyrics ? <TrackLyrics lyrics={this.props.lyrics} /> : <div></div>
-    let buttonPrim = "btn btn-outline-primary my-2 my-sm-0";
-    let buttonDang = "btn btn-outline-danger my-2 my-sm-0";
 
     return(
       <div className="song-details">
         <SearchNav history={this.props.history} />
         <div className="track-display">
           <TrackInfo track={this.props.track} />
-          <button className={this.state.toggleLyrics ? buttonDang : buttonPrim} onClick={this.handleClick}>Lyrics</button> 
+          {this.getBtn()}
           {displayLyrics}
           <div className="track-lyrics">You can also find the full lyrics from <a href={this.props.track.url} target="_blank">Genius</a>.</div>
         </div>

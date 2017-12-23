@@ -82,3 +82,50 @@ body {
   cursor: pointer;
   background-color: rgba(236, 238, 239, .65);
 }
+
+.lyrics-btn {
+  cursor: pointer;
+}
+
+.lyrics-btn-blue {
+  color: #0275d8;
+  background-image: none;
+  background-color: transparent;
+  border-color: #0275d8;
+}
+.lyrics-btn-red {
+  color: #D9534E;
+  background-image: none;
+  background-color: transparent;
+  border-color: #D9534E;
+}
+
+.lyrics-btn-blue:hover {
+  color: white;
+  background-color: #0275d8;
+}
+
+.lyrics-btn-red:hover {
+  color: white;
+  background-color: #D9534E;
+}
+
+.right-arrow {
+  margin-left: 2%;
+  border: solid #0275d8;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.down-arrow {
+  margin-left: 2%;
+  border: solid #D9534E;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
