@@ -18,23 +18,41 @@ export function fetchTracks(term, history){
 }
 
 export function fetchTrack(id){
-  const request = axios.get(`${ROOT_URL}/song`, {
-    headers: { songid: id }
-  });
-
-  return{
-    type: FETCH_TRACK,
-    payload: request
+  return function(dispatch){
+    let url = `${ROOT_URL}/song`;
+    return axios.get(url, {
+      headers: { songid: id }
+    })
+      .then(response => {
+        dispatch({
+          type: FETCH_TRACK,
+          payload: response
+        });
+      });
   }
 }
 
 export function fetchLyrics(url){
-  const request = axios.get(`${ROOT_URL}/lyrics`, {
-    headers: { songurl: url }
-  });
+  return function(dispatch){
+    let aurl = `${ROOT_URL}/lyrics`;
+    return axios.get(aurl, {
+      headers: { songurl: url }
+    })
+      .then(response => {
+        dispatch({
+          type: FETCH_LYRICS,
+          payload: response
+        });
+      });
+  }
+}
 
-  return{
-    type: FETCH_LYRICS,
-    payload: request
+export function fetchTrackAndLyrics(trackId) {
+  return (dispatch, getState) => {
+    return dispatch(fetchTrack(trackId)).then(() => {
+      const fetchedTrack = getState().fetch.track;
+      const trackUrl = fetchedTrack.url;
+      return dispatch(fetchLyrics(trackUrl))
+    })
   }
 }
