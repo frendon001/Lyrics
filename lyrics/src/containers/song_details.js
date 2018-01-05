@@ -6,7 +6,7 @@ import VideoDisplay from '../components/video_display';
 import VideoList from '../components/video_list';
 import TrackLyrics from '../components/track_lyrics';
 import { KEYS } from '../config';
-import { fetchTrack, fetchLyrics, fetchTrackAndLyrics } from '../actions';
+import { fetchTrackAndLyrics } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -16,11 +16,8 @@ class SongDetails extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null,
-      toggleLyrics: false
+      selectedVideo: null
     }
-
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
@@ -35,24 +32,6 @@ class SongDetails extends Component {
     });
   }
 
-  handleClick(){
-    if (!this.state.toggleLyrics && !this.props.lyrics){
-      this.setState({
-        toggleLyrics: true
-      });
-      this.props.fetchLyrics(this.props.track.url)
-    }
-    else if (!this.state.toggleLyrics){
-      this.setState({
-        toggleLyrics: true
-      });
-    } else {
-      this.setState({
-        toggleLyrics: false
-      });
-    }
-  }
-
   render(){
     if (!this.props.track) {
       return <div>Loading...</div>
@@ -61,16 +40,13 @@ class SongDetails extends Component {
     console.log('Track: ', this.props.track)
     console.log('Lyrics: ', this.props.lyrics)
 
-    let displayLyrics = this.state.toggleLyrics ? <TrackLyrics lyrics={this.props.lyrics} /> : <div></div>
-
     return(
       <div className="song-details">
         <SearchNav history={this.props.history} />
         <div className="track-display">
           <TrackInfo track={this.props.track} />
-          <button className="btn btn-outline-primary my-2 my-sm-0" onClick={this.handleClick}>Lyrics</button> 
-          {displayLyrics}
-          <div className="track-lyrics">You can also find the full lyrics from <a href={this.props.track.url} target="_blank">Genius</a>.</div>
+          <TrackLyrics lyrics={this.props.lyrics} />
+          <div className="track-lyrics">You can also find the full lyrics and annotations from <a href={this.props.track.url} target="_blank">Genius</a>.</div>
         </div>
         <div className="video-detail">
           <VideoDisplay video={this.state.selectedVideo} />
@@ -92,8 +68,6 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return bindActionCreators({
-    fetchTrack,
-    fetchLyrics,
     fetchTrackAndLyrics
   }, dispatch);
 }
