@@ -26,14 +26,13 @@ class SongDetails extends Component {
   componentDidMount(){
     const {id, track, artist} = this.props.match.params;
     const videoTerm = artist + " " + track;
-    // this.props.fetchTrack(id);
+    this.props.fetchTrackAndLyrics(id);
     YTSearch({key: KEYS.google, term: videoTerm}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       });
     });
-    this.props.fetchTrackAndLyrics(id);
   }
 
   handleClick(){
