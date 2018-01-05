@@ -28,6 +28,7 @@ body {
 }
 
 .no-results{
+  color: antiquewhite;
   text-align: center;
   margin: 5%;
   padding: 10%;
