@@ -6,7 +6,7 @@ import VideoDisplay from '../components/video_display';
 import VideoList from '../components/video_list';
 import TrackLyrics from '../components/track_lyrics';
 import { KEYS } from '../config';
-import { fetchTrack, fetchLyrics } from '../actions';
+import { fetchTrack, fetchLyrics, fetchTrackAndLyrics } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -26,13 +26,14 @@ class SongDetails extends Component {
   componentDidMount(){
     const {id, track, artist} = this.props.match.params;
     const videoTerm = artist + " " + track;
-    this.props.fetchTrack(id);
+    // this.props.fetchTrack(id);
     YTSearch({key: KEYS.google, term: videoTerm}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       });
     });
+    this.props.fetchTrackAndLyrics(id);
   }
 
   handleClick(){
@@ -57,6 +58,9 @@ class SongDetails extends Component {
     if (!this.props.track) {
       return <div>Loading...</div>
     }
+
+    console.log('Track: ', this.props.track)
+    console.log('Lyrics: ', this.props.lyrics)
 
     let displayLyrics = this.state.toggleLyrics ? <TrackLyrics lyrics={this.props.lyrics} /> : <div></div>
 
@@ -90,7 +94,8 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return bindActionCreators({
     fetchTrack,
-    fetchLyrics
+    fetchLyrics,
+    fetchTrackAndLyrics
   }, dispatch);
 }
 
