@@ -14,7 +14,7 @@ router(app);
 
 app.get('*', (req, res) => {
   // res.sendFile(__dirname + "/public/index.html");
-  var testHtmlPath = path.resolve(__dirname, '..', 'lyrics', 'public', 'index.html');
+  var testHtmlPath = path.resolve(__dirname, '..', 'lyrics', 'build', 'index.html');
   res.sendFile(testHtmlPath);
 })
 
