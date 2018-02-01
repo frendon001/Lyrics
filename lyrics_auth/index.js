@@ -9,7 +9,14 @@ const cors = require('cors');
 app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
+
 router(app);
+
+app.get('*', (req, res) => {
+  // res.sendFile(__dirname + "/public/index.html");
+  var testHtmlPath = path.resolve(__dirname, '..', 'public', 'index.html');
+  res.sendFile(testHtmlPath);
+})
 
 const port = process.env.PORT || 3030;
 const server = http.createServer(app);
