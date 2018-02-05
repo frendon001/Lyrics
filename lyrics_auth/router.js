@@ -12,6 +12,9 @@ module.exports = function(app){
   app.get('/static/css/main.fae40743.css', (req, res) => {
     res.sendFile(path.join(__dirname, "../lyrics/build/static/css/main.fae40743.css"));
   });
+  app.get('/static/media/dj_set_index.87d8ee92.png', (req, res) => {
+    res.sendFile(path.join(__dirname, "../lyrics/build/static/media/dj_set_index.87d8ee92.png"));
+  });
   app.get('/song', Genius.song);
   app.get('/song/*', (req, res) => {
     res.sendFile(path.join(__dirname, "../lyrics/build/index.html"));
