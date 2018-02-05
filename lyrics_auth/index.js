@@ -12,12 +12,6 @@ app.use(bodyParser.json({ type: '*/*' }));
 
 router(app);
 
-app.get('*', (req, res) => {
-  // res.sendFile(__dirname + "/public/index.html");
-  var testHtmlPath = path.resolve(__dirname, '..', 'lyrics', 'build', 'index.html');
-  res.sendFile(testHtmlPath);
-})
-
 const port = process.env.PORT || 3030;
 const server = http.createServer(app);
 server.listen(port);
