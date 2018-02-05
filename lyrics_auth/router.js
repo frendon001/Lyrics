@@ -4,9 +4,6 @@ const config = require('./config');
 
 module.exports = function(app){
   app.get('/', (req, res) => {
-    // res.sendFile(__dirname + "/public/index.html");
-    // var testHtmlPath = path.resolve(__dirname, '..', 'lyrics', 'build', 'index.html');
-    // res.sendFile(testHtmlPath);
     res.sendFile(path.join(__dirname, "../lyrics/build/index.html"));
   });
   app.get('/static/js/main.4c9d4a35.js', (req, res) => {
@@ -16,6 +13,15 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "../lyrics/build/static/css/main.fae40743.css"));
   });
   app.get('/song', Genius.song);
+  app.get('/song/*', (req, res) => {
+    res.sendFile(path.join(__dirname, "../lyrics/build/index.html"));
+  });
   app.get('/search', Genius.search);
+  app.get('/search/*', (req, res) => {
+    res.sendFile(path.join(__dirname, "../lyrics/build/index.html"));
+  });
   app.get('/lyrics', Genius.lyrics);
+  app.get('/lyrics/*', (req, res) => {
+    res.sendFile(path.join(__dirname, "../lyrics/build/index.html"));
+  });
 }
