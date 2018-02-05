@@ -10,7 +10,7 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "../lyrics/build/index.html"));
   });
   app.get('/static/js/main.506aa18b.js', (req, res) => {
-    res.sendFile(path.join(__dirname, "../lyrics/build/static/js/main.506aa18b.js"));
+    res.sendFile(path.join(__dirname, "../lyrics/build/static/js/main.4c9d4a35.js"));
   });
   app.get('/static/css/main.5022fc3c.css', (req, res) => {
     res.sendFile(path.join(__dirname, "../lyrics/build/static/css/main.5022fc3c.css"));
