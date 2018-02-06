@@ -9,8 +9,8 @@ module.exports = function(app){
   app.get('/static/js/main.1bf743b8.js', (req, res) => {
     res.sendFile(path.join(__dirname, "../lyrics/build/static/js/main.1bf743b8.js"));
   });
-  app.get('/static/css/main.6a37f161.css', (req, res) => {
-    res.sendFile(path.join(__dirname, "../lyrics/build/static/css/main.6a37f161.css"));
+  app.get('/static/css/main.abce8e55.css', (req, res) => {
+    res.sendFile(path.join(__dirname, "../lyrics/build/static/css/main.abce8e55.css"));
   });
   app.get('/static/media/dj_set_index.87d8ee92.png', (req, res) => {
     res.sendFile(path.join(__dirname, "../lyrics/build/static/media/dj_set_index.87d8ee92.png"));
