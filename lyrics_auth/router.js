@@ -6,11 +6,11 @@ module.exports = function(app){
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "../lyrics/build/index.html"));
   });
-  app.get('/static/js/main.4c9d4a35.js', (req, res) => {
-    res.sendFile(path.join(__dirname, "../lyrics/build/static/js/main.4c9d4a35.js"));
+  app.get('/static/js/main.1bf743b8.js', (req, res) => {
+    res.sendFile(path.join(__dirname, "../lyrics/build/static/js/main.1bf743b8.js"));
   });
-  app.get('/static/css/main.fae40743.css', (req, res) => {
-    res.sendFile(path.join(__dirname, "../lyrics/build/static/css/main.fae40743.css"));
+  app.get('/static/css/main.6a37f161.css', (req, res) => {
+    res.sendFile(path.join(__dirname, "../lyrics/build/static/css/main.6a37f161.css"));
   });
   app.get('/static/media/dj_set_index.87d8ee92.png', (req, res) => {
     res.sendFile(path.join(__dirname, "../lyrics/build/static/media/dj_set_index.87d8ee92.png"));
