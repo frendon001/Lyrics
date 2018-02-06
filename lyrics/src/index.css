@@ -41,7 +41,8 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .track-display{
@@ -52,7 +53,8 @@ body {
   margin-right: 5%;
   text-align: center;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background-color: rgba(236, 238, 239, .65);
 }
 
@@ -71,7 +73,8 @@ body {
   margin-left: 2%;
   margin-right: 2%;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .video-list-item{

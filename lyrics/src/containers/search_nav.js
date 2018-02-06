@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchTracks } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 
 class SearchNav extends Component{
     constructor(props){
@@ -35,11 +36,11 @@ class SearchNav extends Component{
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="navbar-brand">Lyrics App</div>
+                <Link className="navbar-brand" to="/">Lyrics App</Link>
     
                 <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <form className="form-inline justify-content-end" onSubmit={this.onFormSubmit}>
-                        <input className="form-control mr-sm-2" type="text" placeholder="Search Songs" value={this.state.term} onChange={this.onInputChange}/>
+                        <input className="form-control mr-sm-2" type="text" placeholder="Search Genius" value={this.state.term} onChange={this.onInputChange}/>
                         <button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>

@@ -9,7 +9,6 @@ export default function(state = {}, action){
       let {song} = action.payload.data.response;
       return {...state, track: song}
     case FETCH_LYRICS:
-      console.log('Fetch Track Action: ', action.payload)
       let lyrics = action.payload.data;
       let index = getLyricsIndex(lyrics);
       return {...state, lyrics: lyrics[index]}

@@ -37,9 +37,6 @@ class SongDetails extends Component {
       return <div>Loading...</div>
     }
 
-    console.log('Track: ', this.props.track)
-    console.log('Lyrics: ', this.props.lyrics)
-
     return(
       <div className="song-details">
         <SearchNav history={this.props.history} />
