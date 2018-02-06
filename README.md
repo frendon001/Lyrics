@@ -1,7 +1,7 @@
 # Lyrics App
 
 ## Project Description
-This project was created with the initial purpose of being able to easily get the lyrics of any given song. The final result includes basic track information with album art (if available) and related YouTube videos. Track search and information is retrieved using the Genius API, YouTube API for the YouTube videos, and a web scraper to grab the lyrics from a given URL
+This project was created with the initial purpose of being able to easily get the lyrics of any given song. The final result includes basic track information with album art (if available) and related YouTube videos. Track search and information is retrieved using the Genius API, YouTube API for the YouTube videos, and a web scraper to grab the lyrics from a given URL. This project is not for commericial use and was meant for personal use only.
 
 ## Project Screenshots
 
@@ -10,8 +10,6 @@ This project was created with the initial purpose of being able to easily get th
 ![TrackSearch](./images/search.png)
 
 ![TrackView](./images/trackview.png)
-
-![TrackLyrics](./images/tracklyrics.png)
 
 ## Project Stack
 
