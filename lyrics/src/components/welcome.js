@@ -11,7 +11,7 @@ const renderMessage = () => {
           YouTube Videos!
         </p>
         <hr className="my-4"/>
-        <p>Search for a track by song, artist, or both from the navigation bar above to get started!</p>
+        <p>Search by song, artist, or both from the navigation bar above to get started!</p>
       </div>
     </div>
   );
