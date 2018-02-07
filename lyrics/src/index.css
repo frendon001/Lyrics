@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  overflow-y: hidden;
 }
 
 .welcome{
@@ -50,9 +51,9 @@ body {
   padding: 2%;
   margin-top: 2%;
   margin-left: 5%;
-  margin-right: 5%;
+  /* margin-right: 5%; */
   text-align: center;
-  height: 100vh;
+  height: 90vh;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: rgba(236, 238, 239, .65);
@@ -70,9 +71,9 @@ body {
   float: right;
   width: 46%;
   margin-top: 2%;
-  margin-left: 2%;
-  margin-right: 2%;
-  height: 100vh;
+  /* margin-left: 2%; */
+  margin-right: 5%;
+  height: 90vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }
