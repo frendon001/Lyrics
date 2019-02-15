@@ -1,3 +1,3 @@
 exports.KEYS = {
-  google: 'AIzaSyAiAZTlUCAZDrorA0smIyRoGR8pOi1o-II'
+  google: 'AIzaSyAEXhoih06yDStgTQ-SXxTcAX7PkKc39Ds'
 }
