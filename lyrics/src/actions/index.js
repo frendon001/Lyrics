@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { FETCH_TRACKS, FETCH_TRACK, FETCH_LYRICS } from './types';
-// use the local host URL for local testing
-// const ROOT_URL = 'http://localhost:3030'
-const ROOT_URL = ''
+const keys = require('../keys')
+const ROOT_URL = keys.hostURL
 
 export function fetchTracks(term, history){
   const request = axios.get(`${ROOT_URL}/search`, {

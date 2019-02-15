@@ -1,5 +1,6 @@
 const config = require('../config');
 var Genius = require("node-genius");
+const keys = require('../auth_keys')
 var geniusClient = new Genius(config.config.access_token);
 var scraperjs = require('scraperjs');
 

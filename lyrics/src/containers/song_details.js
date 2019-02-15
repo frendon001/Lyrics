@@ -5,10 +5,11 @@ import YTSearch from 'youtube-api-search';
 import VideoDisplay from '../components/video_display';
 import VideoList from '../components/video_list';
 import TrackLyrics from '../components/track_lyrics';
-import { KEYS } from '../config';
 import { fetchTrackAndLyrics } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
+const keys = require('../keys.js')
 
 class SongDetails extends Component {
   constructor(props){
@@ -24,7 +25,7 @@ class SongDetails extends Component {
     const {id, track, artist} = this.props.match.params;
     const videoTerm = artist + " " + track;
     this.props.fetchTrackAndLyrics(id);
-    YTSearch({key: KEYS.google, term: videoTerm}, (videos) => {
+    YTSearch({key: keys.youtubeAPI, term: videoTerm}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
