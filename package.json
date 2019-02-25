@@ -10,7 +10,7 @@
     "start": "node lyrics_auth/index",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon lyrics_auth/index.js",
-    "heroku-postbuild": "cd lyrics/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd lyrics/ && npm install && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
