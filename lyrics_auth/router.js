@@ -1,6 +1,6 @@
 const path = require("path");
 const Genius = require('./controllers/genius');
-const config = require('./config');
+//const config = require('./config');
 
 module.exports = function(app){
   app.get('/', (req, res) => {
