@@ -43,22 +43,23 @@ Checkout this repo and install the dependencies
 ```
 
 ### Configuration Setup
-Two `config.js` files will need to be setup in both the Front End and Back End in order for this project to function as expected.
+Two `dev.js` files will need to be setup in both the Front End and Back End in order for this project to function as expected.
 
 #### Front End Configuration
-The `config.js` will include the Google API Key. You can get your own API from the official YouTube Data API [guide](https://developers.google.com/youtube/v3/getting-started). The file should be placed in the `/lyrics/src/` directory. See below for an example of how the file should look:
+The `dev.js` will include the Google API Key. You can get your own API from the official YouTube Data API [guide](https://developers.google.com/youtube/v3/getting-started). The file should be placed in the `/lyrics/src/` directory. See below for an example of how the file should look:
 
 ```javascript
-exports.KEYS = {
-  google: <Your Key Here!>
+module.exports = {
+  youtubeAPI: <Your Key Here!>,
+  hostURL : 'http://localhost:3030'
 }
 ```
 
 #### Back End Configuration
-This `config.js` file will include the Genius API Client Access Token. You can get one for the Genius [API Client Management Page](https://genius.com/api-clients). The file should be place in the `/lyrics_auth/` directory. Below is an example on how the file should look:
+This `dev.js` file will include the Genius API Client Access Token. You can get one for the Genius [API Client Management Page](https://genius.com/api-clients). The file should be place in the `/lyrics_auth/` directory. Below is an example on how the file should look:
 ```javascript
-exports.config = {
-  access_token: <Your Access Token>
+module.exports = {
+  geniusAPI: <Your Access Token>
 }
 ```
 

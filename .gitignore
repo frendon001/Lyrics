@@ -1,3 +1,4 @@
 /node_modules
-/lyrics_auth/config.js
 .DS_Store
+dev.js
+config.js
